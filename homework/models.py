@@ -1,3 +1,4 @@
+# Used AI Assistance
 """
 Implement the following models for classification.
 
@@ -62,6 +63,7 @@ class MLPClassifier(nn.Module):
         h: int = 64,
         w: int = 64,
         num_classes: int = 6,
+        hidden_dim: int = 128,
     ):
         """
         An MLP with a single hidden layer
@@ -70,11 +72,11 @@ class MLPClassifier(nn.Module):
             h: int, height of the input image
             w: int, width of the input image
             num_classes: int, number of classes
+            hidden_dim: int, size of hidden layer
         """
         super().__init__()
 
         input_dim = 3 * h * w
-        hidden_dim = 128
 
         self.net = nn.Sequential(
             nn.Linear(input_dim, hidden_dim),
